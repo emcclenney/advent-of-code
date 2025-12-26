@@ -15,10 +15,25 @@ def init_arg_parser():
 
 
 def parse_combo_turn(combo_entry):
+    '''
+    Process a combo entry string into a formatted tuple
+
+    :param combo_entry: The combo entry string to be processed
+
+    :return: A formatted tuple in the format (direction, turn_len)
+    '''
     return (combo_entry[0], int(combo_entry[1:]) % 100)
 
 
 def get_spinlock_password(input_file, verbose=False):
+    '''
+    Parse the provided spinlock combination input file and calculate the door password
+
+    :param input_file: Path to an input data file containing spinlock combo values
+
+    :param verbose: Flag used to include verbose output
+    '''
+
     # Read the combination data from the given input file, if found
     try:
         with open(input_file) as f:
